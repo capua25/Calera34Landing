@@ -4,11 +4,11 @@
 
 .inner {
   display: grid;
-  gap: var(--space-7);
+  gap: var(--space-4);
   align-items: center;
   max-width: 72rem;
   margin: 0 auto;
-  padding: var(--space-8) var(--space-4) var(--space-8);
+  padding: var(--space-6) var(--space-4) var(--space-8);
 }
 
 .copy {
@@ -85,14 +85,16 @@
   color: var(--sky-text);
 }
 
-/* Decorative mark: only on wide screens, where it sits beside the copy. */
+/* Decorative mark: small above the copy on phones, beside it on wide screens. */
 .visual {
-  display: none;
+  order: -1;
 }
 
 .mark {
-  width: 100%;
+  /* Size is reserved from the viewBox ratio, so the load animation never shifts layout. */
+  width: 4.5rem;
   height: auto;
+  aspect-ratio: 262 / 212;
 }
 
 /* Hero load animation: the logo line draws in, then the dot pops. */
@@ -109,12 +111,17 @@
 @media (min-width: 860px) {
   .inner {
     grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: var(--space-7);
     padding-top: var(--space-9);
     padding-bottom: var(--space-9);
   }
 
   .visual {
-    display: block;
+    order: 0;
     padding: var(--space-6);
+  }
+
+  .mark {
+    width: 100%;
   }
 }

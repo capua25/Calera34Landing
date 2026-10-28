@@ -6,6 +6,8 @@
   --sky-text: #0A73B5;
   --grid: #E8EDF3;
   --surface: #F2F4F7;
+  /* Form control borders: 3.6:1 on white (WCAG 1.4.11 non-text contrast). */
+  --border-strong: #7A8699;
   --white: #FFFFFF;
 
   --radius: 2px;
@@ -54,7 +56,7 @@ a {
 }
 
 :focus-visible {
-  outline: 2px solid var(--sky);
+  outline: 2px solid var(--sky-text);
   outline-offset: 2px;
 }
 

@@ -66,7 +66,7 @@
   width: 100%;
   min-height: 3rem;
   padding: var(--space-3);
-  border: 1px solid #A9B4C4;
+  border: 1px solid var(--border-strong);
   border-radius: var(--radius);
   background: var(--white);
   color: var(--navy);
@@ -79,7 +79,7 @@
 
 .field input:focus-visible,
 .field textarea:focus-visible {
-  outline: 2px solid var(--sky);
+  outline: 2px solid var(--sky-text);
   outline-offset: 1px;
   border-color: var(--navy);
 }
