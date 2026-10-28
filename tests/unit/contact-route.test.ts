@@ -45,21 +45,34 @@ describe("POST /api/contact", () => {
     expect(res.status).toBe(303);
     expect(res.headers.get("location")).toBe("https://example.test/gracias");
     expect(send).toHaveBeenCalledTimes(1);
+    expect(send).toHaveBeenCalledWith(
+      { ...valid, name: "Ana" },
+      { apiKey: "key", to: "to@calera34.uy", from: "web@calera34.uy" },
+    );
   });
 
-  it("redirects to error page when not configured", async () => {
-    vi.stubEnv("RESEND_API_KEY", "");
-    const res = await POST(req(valid));
-    expect(res.status).toBe(303);
-    expect(res.headers.get("location")).toMatch(/\/error-envio$/);
-    expect(send).not.toHaveBeenCalled();
+  it("sends trimmed data", async () => {
+    await POST(req({ ...valid, name: "  Ana  ", message: " Hola " }));
+    expect(send).toHaveBeenCalledWith(valid, expect.anything());
   });
+
+  it.each(["RESEND_API_KEY", "CONTACT_TO_EMAIL", "CONTACT_FROM_EMAIL"])(
+    "redirects to error page when %s is missing",
+    async (name) => {
+      vi.stubEnv(name, "");
+      const res = await POST(req(valid));
+      expect(res.status).toBe(303);
+      expect(res.headers.get("location")).toMatch(/\/error-envio$/);
+      expect(send).not.toHaveBeenCalled();
+    },
+  );
 
   it("redirects to error page when Resend fails", async () => {
     send.mockRejectedValue(new Error("boom"));
     const res = await POST(req(valid));
     expect(res.status).toBe(303);
     expect(res.headers.get("location")).toMatch(/\/error-envio$/);
+    expect(send).toHaveBeenCalledTimes(1);
   });
 
   it("silently accepts honeypot submissions", async () => {
