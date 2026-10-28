@@ -46,7 +46,7 @@ function Mark() {
         fill={SKY}
         fontSize="21"
         fontWeight="700"
-        style={{ fontFamily: "var(--font-sans), system-ui, sans-serif" }}
+        style={{ fontFamily: "var(--font-sans, system-ui), sans-serif" }}
       >
         34°S
       </text>
@@ -56,7 +56,7 @@ function Mark() {
 
 function Wordmark() {
   return (
-    <g style={{ fontFamily: "var(--font-sans), system-ui, sans-serif" }}>
+    <g style={{ fontFamily: "var(--font-sans, system-ui), sans-serif" }}>
       <text
         x="150"
         y="370"

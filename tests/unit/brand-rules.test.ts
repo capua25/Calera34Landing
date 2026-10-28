@@ -1,15 +1,10 @@
-import * as fs from "node:fs";
+import { globSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 
-// fs.globSync ships in Node 22+, but the pinned @types/node (^20) does not declare it yet.
-const { globSync } = fs as unknown as {
-  globSync: (pattern: string, options: { cwd: string }) => string[];
-};
-
 const root = path.resolve(__dirname, "../..");
 const sourceFiles = globSync("src/**/*.{ts,tsx,css}", { cwd: root });
-const read = (file: string) => fs.readFileSync(path.join(root, file), "utf8");
+const read = (file: string) => readFileSync(path.join(root, file), "utf8");
 
 const relativeLuminance = (hex: string) => {
   const channels = hex
