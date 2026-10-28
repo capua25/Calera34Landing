@@ -20,8 +20,8 @@ Design: `docs/superpowers/specs/2026-10-28-calera34-landing-design.md` · Plan: 
 
 | ID | Specs | Route | Status | Commit |
 |----|-------|-------|--------|--------|
-| T1 Scaffold, config, WhatsApp link | S3, S4 | delegated (user: "SIEMRPE con subagentes") | pending | — |
-| T2 Contact form backend | S3 | delegated | pending | — |
+| T1 Scaffold, config, WhatsApp link | S3, S4 | delegated (user: "SIEMRPE con subagentes") | done (review clean) | 1361237 |
+| T2 Contact form backend | S3 | delegated | done (1 fix round) | f802207, b089f8b |
 | T3 Brand tokens, font, logo | S5, S7, S8 | delegated | pending | — |
 | T4 Sections + CSS animations | S1, S2, S6, S7, S8, S9 | delegated | pending | — |
 | T5 SEO & sharing | S1, S4 | delegated | pending | — |
