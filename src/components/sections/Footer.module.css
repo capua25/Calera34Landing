@@ -1,0 +1,73 @@
+.footer {
+  border-top: 1px solid var(--grid);
+  background: var(--surface);
+  /* Room for the floating WhatsApp button. */
+  padding-bottom: var(--space-9);
+}
+
+.inner {
+  display: grid;
+  gap: var(--space-7);
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-4) var(--space-6);
+}
+
+.brand {
+  min-width: 0;
+}
+
+.logo {
+  width: 9rem;
+  height: auto;
+}
+
+.tagline {
+  max-width: 24rem;
+  margin: var(--space-4) 0 0;
+  line-height: 1.6;
+}
+
+.coords {
+  margin: var(--space-2) 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--sky-text);
+}
+
+.links {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.links a {
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.links a:hover {
+  color: var(--sky-text);
+  text-decoration: underline;
+}
+
+.copy {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4) 0;
+  border-top: 1px solid var(--grid);
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+  }
+
+  .footer {
+    padding-bottom: var(--space-7);
+  }
+}

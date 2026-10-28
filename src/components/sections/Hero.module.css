@@ -1,0 +1,120 @@
+.hero {
+  border-bottom: 1px solid var(--grid);
+}
+
+.inner {
+  display: grid;
+  gap: var(--space-7);
+  align-items: center;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-4) var(--space-8);
+}
+
+.copy {
+  min-width: 0;
+}
+
+.title {
+  margin: 0;
+  max-width: 18ch;
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  overflow-wrap: break-word;
+}
+
+.sub {
+  max-width: 36rem;
+  margin: var(--space-5) 0 0;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.primary,
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 3rem;
+  padding: var(--space-3) var(--space-5);
+  border: 1px solid var(--navy);
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.primary {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.primary:hover {
+  background: var(--sky-text);
+  border-color: var(--sky-text);
+}
+
+.secondary {
+  background: var(--white);
+  color: var(--navy);
+}
+
+.secondary:hover {
+  color: var(--sky-text);
+  border-color: var(--sky-text);
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.coords {
+  margin: var(--space-6) 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--sky-text);
+}
+
+/* Decorative mark: only on wide screens, where it sits beside the copy. */
+.visual {
+  display: none;
+}
+
+.mark {
+  width: 100%;
+  height: auto;
+}
+
+/* Hero load animation: the logo line draws in, then the dot pops. */
+.mark :global(.logo-line) {
+  animation: draw-line 900ms cubic-bezier(0.65, 0, 0.35, 1) 150ms both;
+}
+
+.mark :global(.logo-dot) {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pop-dot 350ms ease-out 1000ms both;
+}
+
+@media (min-width: 860px) {
+  .inner {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    padding-top: var(--space-9);
+    padding-bottom: var(--space-9);
+  }
+
+  .visual {
+    display: block;
+    padding: var(--space-6);
+  }
+}

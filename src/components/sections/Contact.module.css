@@ -1,0 +1,186 @@
+.section {
+  scroll-margin-top: 4rem;
+  border-top: 1px solid var(--grid);
+}
+
+.inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-4);
+}
+
+.intro {
+  max-width: 40rem;
+  margin-bottom: var(--space-7);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.sub {
+  margin: var(--space-4) 0 0;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.layout {
+  display: grid;
+  gap: var(--space-7);
+}
+
+.form {
+  display: grid;
+  gap: var(--space-5);
+  min-width: 0;
+}
+
+.row {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.field {
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.labelText {
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.required {
+  font-weight: 400;
+  color: var(--navy);
+  opacity: 0.75;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  min-height: 3rem;
+  padding: var(--space-3);
+  border: 1px solid #A9B4C4;
+  border-radius: var(--radius);
+  background: var(--white);
+  color: var(--navy);
+  font: inherit;
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible {
+  outline: 2px solid var(--sky);
+  outline-offset: 1px;
+  border-color: var(--navy);
+}
+
+/* display: none also keeps browser autofill out of the honeypot. */
+.honeypot {
+  display: none;
+}
+
+.submit {
+  justify-self: start;
+  min-height: 3rem;
+  padding: var(--space-3) var(--space-6);
+  border: 1px solid var(--navy);
+  border-radius: var(--radius);
+  background: var(--navy);
+  color: var(--white);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background: var(--sky-text);
+  border-color: var(--sky-text);
+}
+
+.panel {
+  display: grid;
+  gap: var(--space-6);
+  align-content: start;
+  padding: var(--space-6) var(--space-5);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.panelBlock {
+  min-width: 0;
+}
+
+.panelTitle {
+  margin: 0 0 var(--space-2);
+  font-size: 1.0625rem;
+  font-weight: 700;
+}
+
+.panelText {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 3rem;
+  margin-top: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  border: 1px solid var(--navy);
+  border-radius: var(--radius);
+  background: var(--white);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.whatsapp:hover {
+  color: var(--sky-text);
+  border-color: var(--sky-text);
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.link {
+  color: var(--sky-text);
+  overflow-wrap: anywhere;
+}
+
+.coords {
+  margin: var(--space-2) 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--sky-text);
+}
+
+@media (min-width: 640px) {
+  .row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 960px) {
+  .inner {
+    padding-top: var(--space-9);
+    padding-bottom: var(--space-9);
+  }
+
+  .layout {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: var(--space-8);
+  }
+}

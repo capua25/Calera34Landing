@@ -1,0 +1,152 @@
+.section {
+  scroll-margin-top: 4rem;
+}
+
+.inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-4);
+}
+
+.title {
+  margin: 0 0 var(--space-7);
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.timeline {
+  position: relative;
+}
+
+/* Connector: the logo line joining the steps. Vertical on phones, horizontal on wide screens. */
+.track {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 5px;
+  width: 2px;
+  background: var(--grid);
+  overflow: hidden;
+}
+
+.fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--sky);
+  transform-origin: top;
+}
+
+.steps {
+  display: grid;
+  gap: var(--space-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  position: relative;
+  padding-left: var(--space-6);
+}
+
+.dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--sky);
+  box-shadow: 0 0 0 4px var(--white);
+}
+
+.number {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 12px;
+  color: var(--sky-text);
+}
+
+.stepTitle {
+  margin: var(--space-2) 0 var(--space-2);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.text {
+  margin: 0;
+  line-height: 1.6;
+}
+
+@keyframes fill-y {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes fill-x {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (min-width: 768px) {
+  .inner {
+    padding-top: var(--space-9);
+    padding-bottom: var(--space-9);
+  }
+
+  .track {
+    top: 5px;
+    bottom: auto;
+    left: 6px;
+    right: 6px;
+    width: auto;
+    height: 2px;
+  }
+
+  .fill {
+    transform-origin: left;
+  }
+
+  .steps {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .step {
+    padding-top: var(--space-6);
+    padding-left: 0;
+    padding-right: var(--space-4);
+  }
+
+  .number {
+    line-height: 1.5;
+  }
+}
+
+/* The connector fills as the timeline scrolls into view. Without support it stays full. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .fill {
+      animation: fill-y linear both;
+      animation-timeline: view();
+      animation-range: entry 20% cover 55%;
+    }
+
+    @media (min-width: 768px) {
+      .fill {
+        animation-name: fill-x;
+      }
+    }
+  }
+}

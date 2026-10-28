@@ -1,0 +1,84 @@
+.section {
+  scroll-margin-top: 4rem;
+}
+
+.inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-4);
+}
+
+.title {
+  max-width: 24ch;
+  margin: 0 0 var(--space-7);
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.columns {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.card {
+  scroll-margin-top: 5rem;
+  padding: var(--space-6) var(--space-5);
+  border: 1px solid var(--grid);
+  border-top: 2px solid var(--sky);
+  border-radius: var(--radius);
+  background: var(--white);
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.lead {
+  margin: var(--space-3) 0 var(--space-5);
+  line-height: 1.6;
+}
+
+.list {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Line-and-dot bullet from the logo motif. */
+.list li::before {
+  content: "";
+  flex: none;
+  width: 14px;
+  height: 6px;
+  background:
+    radial-gradient(circle at 11px 3px, var(--sky) 2.5px, transparent 3px),
+    linear-gradient(var(--sky), var(--sky)) 0 2px / 7px 2px no-repeat;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    padding-top: var(--space-9);
+    padding-bottom: var(--space-9);
+  }
+
+  .columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .card {
+    padding: var(--space-7) var(--space-6);
+  }
+}

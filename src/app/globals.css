@@ -53,6 +53,17 @@ a {
   color: inherit;
 }
 
+:focus-visible {
+  outline: 2px solid var(--sky);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 .grid-bg {
   background-color: var(--white);
   background-image:
@@ -93,7 +104,30 @@ a {
   }
 }
 
+/*
+ * Scroll reveal. Visible by default; content is only hidden-then-revealed where
+ * scroll-driven animations are supported and motion is allowed. Never put it on the H1.
+ */
+.reveal {
+  opacity: 1;
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
   *,
   *::before,
   *::after {

@@ -1,0 +1,92 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--white);
+  border-bottom: 1px solid var(--grid);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  max-width: 72rem;
+  height: 4rem;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  flex: none;
+}
+
+.mark {
+  width: auto;
+  height: 2rem;
+}
+
+.wordmark {
+  font-size: 1.125rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.accent {
+  color: var(--sky);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.links {
+  display: none;
+  gap: var(--space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9375rem;
+}
+
+.links a {
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: var(--sky-text);
+}
+
+.cta {
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius);
+  background: var(--navy);
+  color: var(--white);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.cta:hover {
+  background: var(--sky-text);
+}
+
+@media (max-width: 359px) {
+  .wordmark {
+    display: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .links {
+    display: flex;
+  }
+}

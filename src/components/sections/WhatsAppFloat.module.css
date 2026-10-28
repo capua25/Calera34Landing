@@ -1,0 +1,28 @@
+.float {
+  position: fixed;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+  box-shadow: 0 4px 14px rgb(15 34 64 / 0.25);
+}
+
+.float:hover {
+  background: var(--sky-text);
+}
+
+.float:focus-visible {
+  outline: 2px solid var(--sky);
+  outline-offset: 3px;
+}
+
+.icon {
+  width: 1.75rem;
+  height: 1.75rem;
+}
