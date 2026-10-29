@@ -5,9 +5,16 @@ import { siteConfig } from "@/config/site";
 import { whatsappUrl } from "@/lib/whatsapp";
 import styles from "../results.module.css";
 
+const title = "No pudimos enviar tu mensaje | Calera34 Labs";
+const description =
+  "Hubo un problema al enviar el formulario. Escribinos por WhatsApp o por email.";
+
 export const metadata: Metadata = {
-  title: "No pudimos enviar tu mensaje | Calera34 Labs",
+  title,
+  description,
   robots: { index: false },
+  openGraph: { title, description, url: "/error-envio", locale: "es_UY", type: "website" },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 export default function ErrorEnvioPage() {
