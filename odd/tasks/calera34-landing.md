@@ -22,14 +22,15 @@ Design: `docs/superpowers/specs/2026-10-28-calera34-landing-design.md` · Plan: 
 |----|-------|-------|--------|--------|
 | T1 Scaffold, config, WhatsApp link | S3, S4 | delegated (user: "SIEMRPE con subagentes") | done (review clean) | 1361237 |
 | T2 Contact form backend | S3 | delegated | done (1 fix round) | f802207, b089f8b |
-| T3 Brand tokens, font, logo | S5, S7, S8 | delegated | pending | — |
-| T4 Sections + CSS animations | S1, S2, S6, S7, S8, S9 | delegated | pending | — |
-| T5 SEO & sharing | S1, S4 | delegated | pending | — |
-| T6 Verification + README | S4, S10 | delegated | pending | — |
+| T3 Brand tokens, font, logo | S5, S7, S8 | delegated | done (1 fix round) | 919c3cf, 9a0f984 |
+| T4 Sections + CSS animations | S1, S2, S6, S7, S8, S9 | delegated | done (1 fix round) | 49ad575, 5f5eb4d |
+| T5 SEO & sharing | S1, S4 | delegated | done (1 fix round) | 6655126, 8a09bcb |
+| T6 Verification + README | S4, S10 | delegated | done (1 fix round; Perf 96-97 vs 98 target) | cb38e51, c61217b |
 
 ## Log
 
 - **L1 (2026-10-28, original request):** "Tenemos que hacer una landing para la empresa Calera34 Labs, es una consultora y desarrolladora de software, y partner oficial de odoo, en Carmelo, Colonia"
 - **L2:** Brainstorming completed; spec approved by owner ("aprobado"). Plan written and committed (20cd212).
 - **L3 (2026-10-28, user):** "SIEMRPE con subagentes. Estás usando ODD?" → execution via superpowers:subagent-driven-development; this ODD document created retroactively before any source write.
-- Next step: T1.
+- L4: T1–T6 implemented via subagent-driven development, each task reviewed; Lighthouse mobile 96–97/100/100/100 (Perf target 98 missed, TBT from Next runtime hydration — ruling: accepted, reported). Final whole-branch review: ready with fixes.
+- Next step: final fix wave, then finishing-a-development-branch.
