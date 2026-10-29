@@ -16,7 +16,7 @@ Stack: Next.js 16 (App Router), React 19, CSS Modules, CSS-only animations (redu
 
 ## Replace the placeholders
 
-Everything the owner must set lives in `src/config/site.ts` (most values are marked `TODO(owner)`):
+Everything the owner must set lives in `src/config/site.ts` (the placeholders are marked `TODO(owner)`):
 
 - `whatsappNumber`: real number, digits only, country code first.
 - `email`: real contact email.
@@ -34,6 +34,8 @@ Without configuration the form redirects to `/error-envio`, which offers WhatsAp
    - `CONTACT_TO_EMAIL`: inbox that receives the messages.
    - `CONTACT_FROM_EMAIL`: sender address on the verified domain.
 4. Redeploy.
+
+Note: `/api/contact` has no rate limiting (only a honeypot field), so consider adding it before enabling email.
 
 ## Lighthouse (mobile)
 

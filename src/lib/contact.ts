@@ -10,7 +10,7 @@ export type ParseResult =
   | { ok: true; data: ContactInput }
   | { ok: false; reason: "invalid" | "spam" };
 
-const LIMITS = {
+export const LIMITS = {
   name: 100,
   company: 100,
   email: 254,
@@ -37,7 +37,8 @@ export function parseContact(form: FormData): ParseResult {
     company: singleLine(field(form, "company")),
     email: field(form, "email"),
     phone: singleLine(field(form, "phone")),
-    message: field(form, "message"),
+    // Browsers submit CRLF; textarea maxLength counts a line break as 1.
+    message: field(form, "message").replace(/\r\n/g, "\n"),
   };
 
   if (!data.name || !data.email || !data.message) {

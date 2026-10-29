@@ -22,7 +22,7 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="como-trabajamos" className={styles.section} aria-labelledby="proceso-title">
+    <section id="como-trabajamos" aria-labelledby="proceso-title">
       <div className={styles.inner}>
         <div className="reveal">
           <SectionLabel>Cómo trabajamos</SectionLabel>

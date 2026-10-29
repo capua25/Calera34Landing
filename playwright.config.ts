@@ -13,9 +13,11 @@ export default defineConfig({
   },
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
   webServer: {
-    // No RESEND/CONTACT env vars are injected: the submit test expects /error-envio.
+    // Email env vars are blanked below: the submit test expects /error-envio.
     command: `pnpm build && pnpm start --port ${PORT}`,
     url: `http://localhost:${PORT}`,
+    // Blank values override any local .env.local so e2e never sends real email.
+    env: { RESEND_API_KEY: "", CONTACT_TO_EMAIL: "", CONTACT_FROM_EMAIL: "" },
     reuseExistingServer: false,
     timeout: 180_000,
   },

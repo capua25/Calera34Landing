@@ -24,7 +24,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="servicios" className={styles.section} aria-labelledby="servicios-title">
+    <section id="servicios" aria-labelledby="servicios-title">
       <div className={`reveal ${styles.inner}`}>
         <SectionLabel>Qué hacemos</SectionLabel>
         <h2 id="servicios-title" className={styles.title}>

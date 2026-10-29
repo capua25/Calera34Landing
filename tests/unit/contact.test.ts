@@ -52,6 +52,15 @@ describe("parseContact", () => {
     });
   });
 
+  it("counts CRLF line breaks as one character toward the message limit", () => {
+    const message = "a\r\n".repeat(1000); // 1000 line breaks + 1000 chars
+    const visible = message.replace(/\r\n/g, "\n");
+    expect(visible.length).toBe(2000);
+    expect(message.length).toBe(3000);
+    const r = parseContact(form({ ...valid, message }));
+    expect(r.ok && r.data.message).toBe(visible.trim());
+  });
+
   it("flags honeypot as spam", () => {
     expect(parseContact(form({ ...valid, website: "x" }))).toEqual({
       ok: false,

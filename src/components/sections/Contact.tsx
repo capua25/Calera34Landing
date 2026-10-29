@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config/site";
+import { LIMITS } from "@/lib/contact";
 import { whatsappUrl } from "@/lib/whatsapp";
 import { SectionLabel } from "./SectionLabel";
 import { WhatsAppIcon } from "./WhatsAppIcon";
@@ -25,14 +26,14 @@ export function Contact() {
                 <span className={styles.labelText}>
                   Nombre <span className={styles.required}>(obligatorio)</span>
                 </span>
-                <input name="name" type="text" required maxLength={100} autoComplete="name" />
+                <input name="name" type="text" required maxLength={LIMITS.name} autoComplete="name" />
               </label>
               <label className={styles.field}>
                 <span className={styles.labelText}>Empresa</span>
                 <input
                   name="company"
                   type="text"
-                  maxLength={100}
+                  maxLength={LIMITS.company}
                   autoComplete="organization"
                 />
               </label>
@@ -42,18 +43,21 @@ export function Contact() {
                 <span className={styles.labelText}>
                   Email <span className={styles.required}>(obligatorio)</span>
                 </span>
-                <input name="email" type="email" required maxLength={254} autoComplete="email" />
+                <input name="email" type="email"
+                  required
+                  pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
+                  maxLength={LIMITS.email} autoComplete="email" />
               </label>
               <label className={styles.field}>
                 <span className={styles.labelText}>Teléfono</span>
-                <input name="phone" type="tel" maxLength={30} autoComplete="tel" />
+                <input name="phone" type="tel" maxLength={LIMITS.phone} autoComplete="tel" />
               </label>
             </div>
             <label className={styles.field}>
               <span className={styles.labelText}>
                 ¿Qué necesitás? <span className={styles.required}>(obligatorio)</span>
               </span>
-              <textarea name="message" required maxLength={2000} rows={5} />
+              <textarea name="message" required maxLength={LIMITS.message} rows={5} />
             </label>
             {/* Honeypot: hidden from people and assistive tech; bots that fill it are dropped. */}
             <div className={styles.honeypot} aria-hidden="true">
