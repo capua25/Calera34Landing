@@ -80,8 +80,13 @@
 }
 
 @media (max-width: 359px) {
+  /* Visually hidden, still the link's accessible name. */
   .wordmark {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
   }
 }
 

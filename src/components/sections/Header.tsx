@@ -1,5 +1,4 @@
 import { Logo } from "@/components/logo/Logo";
-import { siteConfig } from "@/config/site";
 import styles from "./Header.module.css";
 
 const links = [
@@ -12,9 +11,9 @@ export function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        <a href="#inicio" className={styles.brand} aria-label={`${siteConfig.name}, inicio`}>
+        <a href="#inicio" className={styles.brand}>
           <Logo variant="mark" className={styles.mark} />
-          <span className={styles.wordmark} aria-hidden="true">
+          <span className={styles.wordmark}>
             Calera<span className={styles.accent}>34</span> Labs
           </span>
         </a>
