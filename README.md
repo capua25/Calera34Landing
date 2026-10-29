@@ -35,7 +35,7 @@ Without configuration the form redirects to `/error-envio`, which offers WhatsAp
    - `CONTACT_FROM_EMAIL`: sender address on the verified domain.
 4. Redeploy.
 
-Note: `/api/contact` has no rate limiting (only a honeypot field), so consider adding it before enabling email.
+Rate limiting: `POST /api/contact` is limited to 5 requests per 10 minutes per IP by a Vercel Firewall custom rule ("Rate limit contact form"), configured in the Vercel project, not in this repository. Requests over the limit get an HTTP 429 response. The form also has a honeypot field.
 
 ## Lighthouse (mobile)
 
