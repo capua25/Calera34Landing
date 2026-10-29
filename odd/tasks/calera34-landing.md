@@ -25,7 +25,7 @@ Design: `docs/superpowers/specs/2026-10-28-calera34-landing-design.md` · Plan: 
 | T3 Brand tokens, font, logo | S5, S7, S8 | delegated | done (1 fix round) | 919c3cf, 9a0f984 |
 | T4 Sections + CSS animations | S1, S2, S6, S7, S8, S9 | delegated | done (1 fix round) | 49ad575, 5f5eb4d |
 | T5 SEO & sharing | S1, S4 | delegated | done (1 fix round) | 6655126, 8a09bcb |
-| T6 Verification + README | S4, S10 | delegated | done (1 fix round; Perf 96-97 vs 98 target) | cb38e51, c61217b |
+| T6 Verification + README | S4, S10 | delegated | done (1 fix round) | cb38e51, c61217b, 85a74d0, 90dd0b4 |
 
 ## Log
 
@@ -33,4 +33,5 @@ Design: `docs/superpowers/specs/2026-10-28-calera34-landing-design.md` · Plan: 
 - **L2:** Brainstorming completed; spec approved by owner ("aprobado"). Plan written and committed (20cd212).
 - **L3 (2026-10-28, user):** "SIEMRPE con subagentes. Estás usando ODD?" → execution via superpowers:subagent-driven-development; this ODD document created retroactively before any source write.
 - L4: T1–T6 implemented via subagent-driven development, each task reviewed; Lighthouse mobile 96–97/100/100/100 (Perf target 98 missed, TBT from Next runtime hydration — ruling: accepted, reported). Final whole-branch review: ready with fixes.
-- Next step: final fix wave, then finishing-a-development-branch.
+- L5: Final review fix wave applied (email pattern, CRLF length, canonical, .env ignore, shared LIMITS, scroll-padding, e2e blank env, README). Lighthouse re-measured 6x: 100/100/100/100 — earlier 96–97 attributed to host load; S4 met.
+- Next step: owner decides merge/PR; deploy and domain pending (S10).
