@@ -43,11 +43,11 @@ Measured against `pnpm start` with Lighthouse, mobile form factor, default throt
 
 | Run | Performance | Accessibility | Best Practices | SEO |
 | --- | --- | --- | --- | --- |
-| 1 | 97 | 100 | 100 | 100 |
-| 2 | 96 | 100 | 100 | 100 |
-| 3 | 97 | 100 | 100 | 100 |
+| 1 | 100 | 100 | 100 | 100 |
+| 2 | 100 | 100 | 100 | 100 |
+| 3 | 100 | 100 | 100 | 100 |
 
-The 98 performance target is not met yet: LCP is 0.9 s and CLS is 0, but Total Blocking Time is about 200 ms, likely caused by React hydration of the Next.js runtime chunks (the app has no client components of its own).
+Total Blocking Time is 50-61 ms. A webpack build (`next build --webpack`) scored the same (100 x3, TBT 51-83 ms), so the default Turbopack build is kept. Earlier runs on a busier machine scored 96-97; scores vary with host load.
 
 ## Pending (owner decisions)
 
