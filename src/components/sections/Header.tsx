@@ -12,7 +12,9 @@ export function Header() {
     <header className={styles.header}>
       <div className={styles.inner}>
         <a href="#inicio" className={styles.brand}>
-          <Logo variant="mark" className={styles.mark} />
+          <span aria-hidden="true" className={styles.markWrap}>
+            <Logo variant="mark" className={styles.mark} />
+          </span>
           <span className={styles.wordmark}>
             Calera<span className={styles.accent}>34</span> Labs
           </span>

@@ -30,6 +30,10 @@
   height: 2rem;
 }
 
+.markWrap {
+  display: flex;
+}
+
 .wordmark {
   font-size: 1.125rem;
   font-weight: 800;

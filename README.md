@@ -16,12 +16,12 @@ Stack: Next.js 16 (App Router), React 19, CSS Modules, CSS-only animations (redu
 
 ## Replace the placeholders
 
-Everything the owner must set lives in `src/config/site.ts`, marked `TODO(owner)`:
+Everything the owner must set lives in `src/config/site.ts` (most values are marked `TODO(owner)`):
 
 - `whatsappNumber`: real number, digits only, country code first.
 - `email`: real contact email.
 - `url`: final production domain (used for canonical, sitemap and social metadata).
-- `coordinates`: confirm the location shown in the design.
+- `coordinates`: approximate values, not marked `TODO(owner)`; the owner must confirm them.
 
 ## Enable the contact form email
 
@@ -45,7 +45,7 @@ Measured against `pnpm start` with Lighthouse, mobile form factor, default throt
 | 2 | 96 | 100 | 100 | 100 |
 | 3 | 97 | 100 | 100 | 100 |
 
-The 98 performance target is not met yet: LCP is 0.9 s and CLS is 0, but Total Blocking Time is about 200 ms, caused by React hydration of the Next.js runtime chunks (the app has no client components of its own).
+The 98 performance target is not met yet: LCP is 0.9 s and CLS is 0, but Total Blocking Time is about 200 ms, likely caused by React hydration of the Next.js runtime chunks (the app has no client components of its own).
 
 ## Pending (owner decisions)
 
