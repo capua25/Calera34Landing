@@ -1,9 +1,10 @@
 import { siteConfig } from "@/config/site";
-import { whatsappUrl } from "@/lib/whatsapp";
+import { hasWhatsApp, whatsappUrl } from "@/lib/whatsapp";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import styles from "./WhatsAppFloat.module.css";
 
 export function WhatsAppFloat() {
+  if (!hasWhatsApp(siteConfig.whatsappNumber)) return null;
   return (
     <a
       href={whatsappUrl(siteConfig.whatsappNumber, siteConfig.whatsappMessage)}

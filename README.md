@@ -18,14 +18,14 @@ Stack: Next.js 16 (App Router), React 19, CSS Modules, CSS-only animations (redu
 
 Everything the owner must set lives in `src/config/site.ts` (the placeholders are marked `TODO(owner)`):
 
-- `whatsappNumber`: real number, digits only, country code first.
+- `whatsappNumber`: real number, digits only, country code first. While empty, every WhatsApp link and button is hidden.
 - `email`: real contact email.
 - `url`: final production domain (used for canonical, sitemap and social metadata).
 - `coordinates`: approximate values, not marked `TODO(owner)`; the owner must confirm them.
 
 ## Enable the contact form email
 
-Without configuration the form redirects to `/error-envio`, which offers WhatsApp as a fallback. To send email:
+Without configuration the form redirects to `/error-envio`, which offers WhatsApp (or the contact email while no WhatsApp number is set) as a fallback. To send email:
 
 1. Create a [Resend](https://resend.com) account.
 2. Verify a sending domain in Resend.

@@ -1,6 +1,6 @@
 import { siteConfig } from "@/config/site";
 import { LIMITS } from "@/lib/contact";
-import { whatsappUrl } from "@/lib/whatsapp";
+import { hasWhatsApp, whatsappUrl } from "@/lib/whatsapp";
 import { SectionLabel } from "./SectionLabel";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import styles from "./Contact.module.css";
@@ -71,17 +71,19 @@ export function Contact() {
             </button>
           </form>
           <aside className={styles.panel} aria-label="Otras formas de contacto">
-            <div className={styles.panelBlock}>
-              <h3 className={styles.panelTitle}>¿Preferís WhatsApp?</h3>
-              <p className={styles.panelText}>Escribinos y te respondemos por ahí.</p>
-              <a
-                href={whatsappUrl(siteConfig.whatsappNumber, siteConfig.whatsappMessage)}
-                className={styles.whatsapp}
-              >
-                <WhatsAppIcon className={styles.icon} />
-                Escribinos por WhatsApp
-              </a>
-            </div>
+            {hasWhatsApp(siteConfig.whatsappNumber) && (
+              <div className={styles.panelBlock}>
+                <h3 className={styles.panelTitle}>¿Preferís WhatsApp?</h3>
+                <p className={styles.panelText}>Escribinos y te respondemos por ahí.</p>
+                <a
+                  href={whatsappUrl(siteConfig.whatsappNumber, siteConfig.whatsappMessage)}
+                  className={styles.whatsapp}
+                >
+                  <WhatsAppIcon className={styles.icon} />
+                  Escribinos por WhatsApp
+                </a>
+              </div>
+            )}
             <div className={styles.panelBlock}>
               <h3 className={styles.panelTitle}>Email</h3>
               <a href={`mailto:${siteConfig.email}`} className={styles.link}>

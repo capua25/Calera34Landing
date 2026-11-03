@@ -7,9 +7,9 @@ test("shows partner label and both services", async ({ page }) => {
   await expect(page.getByRole("heading", { name: "Implementación de Odoo", exact: true })).toBeVisible();
 });
 
-test("whatsapp links use wa.me", async ({ page }) => {
+test("whatsapp links are hidden until a number is set", async ({ page }) => {
   await page.goto("/");
-  expect(await page.locator('a[href*="wa.me"]').count()).toBeGreaterThanOrEqual(3);
+  await expect(page.locator('a[href*="wa.me"]')).toHaveCount(0);
 });
 
 test("no horizontal scroll at 320px", async ({ page }) => {
@@ -27,7 +27,7 @@ test("form submits without JavaScript", async ({ page }) => {
   await form.locator('textarea[name="message"]').fill("Quiero una reunión.");
   await form.getByRole("button", { name: /enviar/i }).click();
   await expect(page).toHaveURL(/\/error-envio$/);
-  await expect(page.locator('a[href*="wa.me"]').first()).toBeVisible();
+  await expect(page.locator('a[href^="mailto:"]').first()).toBeVisible();
 });
 
 test("honeypot is hidden from users", async ({ page }) => {

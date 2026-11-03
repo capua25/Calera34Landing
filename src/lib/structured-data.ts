@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config/site";
+import { hasWhatsApp } from "@/lib/whatsapp";
 
 type SiteConfig = typeof siteConfig;
 
@@ -11,7 +12,7 @@ export function buildLocalBusinessJsonLd(
     name: config.name,
     url: config.url,
     email: config.email,
-    telephone: `+${config.whatsappNumber}`,
+    ...(hasWhatsApp(config.whatsappNumber) && { telephone: `+${config.whatsappNumber}` }),
     address: {
       "@type": "PostalAddress",
       addressLocality: config.locality,

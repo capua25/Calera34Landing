@@ -1,6 +1,6 @@
 import { Logo } from "@/components/logo/Logo";
 import { siteConfig } from "@/config/site";
-import { whatsappUrl } from "@/lib/whatsapp";
+import { hasWhatsApp, whatsappUrl } from "@/lib/whatsapp";
 import styles from "./Footer.module.css";
 
 const links = [
@@ -32,11 +32,13 @@ export function Footer() {
                 <a href={link.href}>{link.label}</a>
               </li>
             ))}
-            <li>
-              <a href={whatsappUrl(siteConfig.whatsappNumber, siteConfig.whatsappMessage)}>
-                WhatsApp
-              </a>
-            </li>
+            {hasWhatsApp(siteConfig.whatsappNumber) && (
+              <li>
+                <a href={whatsappUrl(siteConfig.whatsappNumber, siteConfig.whatsappMessage)}>
+                  WhatsApp
+                </a>
+              </li>
+            )}
             <li>
               <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
             </li>

@@ -2,12 +2,14 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Logo } from "@/components/logo/Logo";
 import { siteConfig } from "@/config/site";
-import { whatsappUrl } from "@/lib/whatsapp";
+import { hasWhatsApp, whatsappUrl } from "@/lib/whatsapp";
 import styles from "../results.module.css";
 
 const title = "No pudimos enviar tu mensaje | Calera34 Labs";
-const description =
-  "Hubo un problema al enviar el formulario. Escribinos por WhatsApp o por email.";
+const showWhatsApp = hasWhatsApp(siteConfig.whatsappNumber);
+const description = showWhatsApp
+  ? "Hubo un problema al enviar el formulario. Escribinos por WhatsApp o por email."
+  : "Hubo un problema al enviar el formulario. Escribinos por email.";
 
 export const metadata: Metadata = {
   title,
@@ -24,15 +26,22 @@ export default function ErrorEnvioPage() {
         <Logo variant="mark" className={styles.logo} />
         <p className={styles.label}>Mensaje no enviado</p>
         <h1 className={styles.title}>
-          No pudimos enviar tu mensaje. Escribinos por WhatsApp y te respondemos enseguida.
+          No pudimos enviar tu mensaje. Escribinos por {showWhatsApp ? "WhatsApp" : "email"} y te
+          respondemos enseguida.
         </h1>
         <div className={styles.actions}>
-          <a
-            href={whatsappUrl(siteConfig.whatsappNumber, siteConfig.whatsappMessage)}
-            className={styles.primary}
-          >
-            Escribinos por WhatsApp
-          </a>
+          {showWhatsApp ? (
+            <a
+              href={whatsappUrl(siteConfig.whatsappNumber, siteConfig.whatsappMessage)}
+              className={styles.primary}
+            >
+              Escribinos por WhatsApp
+            </a>
+          ) : (
+            <a href={`mailto:${siteConfig.email}`} className={styles.primary}>
+              {siteConfig.email}
+            </a>
+          )}
           <Link href="/" className={styles.secondary}>
             Volver al inicio
           </Link>

@@ -1,6 +1,6 @@
 import { Logo } from "@/components/logo/Logo";
 import { siteConfig } from "@/config/site";
-import { whatsappUrl } from "@/lib/whatsapp";
+import { hasWhatsApp, whatsappUrl } from "@/lib/whatsapp";
 import { SectionLabel } from "./SectionLabel";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import styles from "./Hero.module.css";
@@ -22,13 +22,15 @@ export function Hero() {
             <a href="#contacto" className={styles.primary}>
               Pedí tu cotización
             </a>
-            <a
-              href={whatsappUrl(siteConfig.whatsappNumber, siteConfig.whatsappMessage)}
-              className={styles.secondary}
-            >
-              <WhatsAppIcon className={styles.icon} />
-              WhatsApp
-            </a>
+            {hasWhatsApp(siteConfig.whatsappNumber) && (
+              <a
+                href={whatsappUrl(siteConfig.whatsappNumber, siteConfig.whatsappMessage)}
+                className={styles.secondary}
+              >
+                <WhatsAppIcon className={styles.icon} />
+                WhatsApp
+              </a>
+            )}
           </div>
           <p className={styles.coords}>
             {siteConfig.locality}, {siteConfig.region} · {siteConfig.coordinates.label}
