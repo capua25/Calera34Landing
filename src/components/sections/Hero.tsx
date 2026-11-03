@@ -15,9 +15,8 @@ export function Hero() {
             Software a medida e implementación de Odoo, cerca tuyo.
           </h1>
           <p className={styles.sub}>
-            Somos un equipo chico de {siteConfig.locality}, {siteConfig.region}. Nos reunimos en
-            persona, entendemos cómo trabaja tu empresa y te acompañamos con el mismo equipo de
-            principio a fin.
+            Somos de {siteConfig.locality}, {siteConfig.region}. Nos reunimos en persona,
+            entendemos cómo trabaja tu empresa y te acompañamos de principio a fin.
           </p>
           <div className={styles.actions}>
             <a href="#contacto" className={styles.primary}>

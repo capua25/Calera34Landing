@@ -23,7 +23,7 @@ export function Why() {
       <div className={`reveal ${styles.inner}`}>
         <SectionLabel>Por qué Calera34</SectionLabel>
         <h2 id="por-que-title" className={styles.title}>
-          Un equipo chico, cerca tuyo.
+          Cerca tuyo, de principio a fin.
         </h2>
         <ul className={styles.grid}>
           {reasons.map((reason, index) => (

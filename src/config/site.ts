@@ -9,6 +9,5 @@ export const siteConfig = {
   // TODO(owner): replace with the real WhatsApp number (digits, country code first)
   whatsappNumber: "59800000000",
   whatsappMessage: "Hola, quiero pedir una reunión o cotización.",
-  // TODO(owner): replace with the real contact email
-  email: "hola@example.com",
+  email: "contacto@calera34labs.com",
 } as const;
