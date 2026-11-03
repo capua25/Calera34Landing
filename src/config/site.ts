@@ -1,7 +1,6 @@
 export const siteConfig = {
   name: "Calera34 Labs",
-  // TODO(owner): replace with the final production domain
-  url: "https://calera34.vercel.app",
+  url: "https://www.calera34labs.com",
   locality: "Carmelo",
   region: "Colonia",
   country: "UY",
