@@ -10,7 +10,7 @@ const services = [
   },
   {
     id: "odoo",
-    title: "Implementación experta de Odoo",
+    title: "Implementación de Odoo",
     lead: "Como Partner Oficial, integramos y adaptamos el sistema ERP líder a la cultura y los procesos reales de tu organización, asegurando una transición fluida y un equipo capacitado.",
     items: [
       "Análisis de tus procesos",
