@@ -3,20 +3,20 @@ import styles from "./Process.module.css";
 
 const steps = [
   {
-    title: "Reunión",
-    text: "Nos juntamos para entender tu negocio y lo que necesitás resolver.",
+    title: "Inmersión y Diagnóstico",
+    text: "Nos reunimos para escuchar tus necesidades operativas y comprender los objetivos comerciales de tu empresa.",
   },
   {
-    title: "Propuesta",
-    text: "Te presentamos un plan claro, con alcance, plazos y costos.",
+    title: "Propuesta a Medida",
+    text: "Diseñamos un plan estratégico transparente, con cronogramas claros, costos definidos y un alcance a tu medida.",
   },
   {
-    title: "Implementación",
-    text: "Desarrollamos o configuramos la solución, con avances que podés ver.",
+    title: "Ejecución y Evolución",
+    text: "Desarrollamos e integramos la solución manteniendo canales abiertos para que visualices los avances de manera constante.",
   },
   {
-    title: "Acompañamiento",
-    text: "Capacitamos a tu equipo y seguimos cerca después de la puesta en marcha.",
+    title: "Acompañamiento Continuo",
+    text: "Capacitamos a tus colaboradores y aseguramos soporte post-implementación para garantizar un crecimiento sostenible.",
   },
 ];
 
@@ -27,7 +27,7 @@ export function Process() {
         <div className="reveal">
           <SectionLabel>Cómo trabajamos</SectionLabel>
           <h2 id="proceso-title" className={styles.title}>
-            Cuatro pasos, sin vueltas.
+            Un método transparente y estructurado.
           </h2>
         </div>
         <div className={styles.timeline}>

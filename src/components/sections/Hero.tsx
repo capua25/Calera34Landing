@@ -10,13 +10,14 @@ export function Hero() {
     <section id="inicio" className={`grid-bg ${styles.hero}`} aria-labelledby="hero-title">
       <div className={styles.inner}>
         <div className={styles.copy}>
-          <SectionLabel>Partner oficial de Odoo</SectionLabel>
+          <SectionLabel>Partner Oficial de Odoo</SectionLabel>
           <h1 id="hero-title" className={styles.title}>
-            Software a medida e implementación de Odoo, cerca tuyo.
+            Transformamos la gestión de tu empresa con tecnología a tu medida.
           </h1>
           <p className={styles.sub}>
-            Somos de {siteConfig.locality}, {siteConfig.region}. Nos reunimos en persona,
-            entendemos cómo trabaja tu empresa y te acompañamos de principio a fin.
+            Combinamos desarrollo especializado y consultoría estratégica desde {siteConfig.locality}
+            para acompañarte cara a cara. Entendemos tu operación real y caminamos junto a vos en cada
+            etapa de la evolución digital de tu negocio.
           </p>
           <div className={styles.actions}>
             <a href="#contacto" className={styles.primary}>

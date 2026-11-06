@@ -1,19 +1,18 @@
-import { siteConfig } from "@/config/site";
 import { SectionLabel } from "./SectionLabel";
 import styles from "./Why.module.css";
 
 const reasons = [
   {
-    title: "Cercanía",
-    text: `Somos de ${siteConfig.locality}, ${siteConfig.region}. Preferimos reunirnos en persona para entender cómo trabaja tu empresa.`,
+    title: "Presencia real y cercanía",
+    text: "Operamos desde Carmelo y Colonia porque creemos en el valor insustituible del vínculo humano y las reuniones presenciales para conectar con tu visión.",
   },
   {
-    title: "Atención personalizada",
-    text: "Te escuchamos y adaptamos la solución a tu negocio, no al revés. Hablás siempre con alguien que conoce tu caso.",
+    title: "Flexibilidad y escucha activa",
+    text: "Diseñamos soluciones que se adaptan con precisión a la identidad de tu empresa, evitando estructuras rígidas y ofreciendo interlocutores directos que conocen en profundidad tu proyecto.",
   },
   {
-    title: "El mismo equipo de principio a fin",
-    text: "Quienes te escuchan en la primera reunión son quienes desarrollan, implementan y te acompañan después.",
+    title: "Continuidad y responsabilidad compartida",
+    text: "El equipo senior con el que conversás el primer día es el mismo que planifica, ejecuta y respalda la solución a largo plazo.",
   },
 ];
 
@@ -23,7 +22,7 @@ export function Why() {
       <div className={`reveal ${styles.inner}`}>
         <SectionLabel>Por qué Calera34</SectionLabel>
         <h2 id="por-que-title" className={styles.title}>
-          Cerca tuyo, de principio a fin.
+          Una alianza basada en la confianza y el compromiso.
         </h2>
         <ul className={styles.grid}>
           {reasons.map((reason, index) => (

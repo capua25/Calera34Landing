@@ -4,14 +4,14 @@ import styles from "./Services.module.css";
 const services = [
   {
     id: undefined,
-    title: "Desarrollo y consultoría",
-    lead: "Construimos el software que tu empresa necesita y te ayudamos a decidir qué conviene hacer antes de invertir.",
+    title: "Desarrollo a Medida y Consultoría Estratégica",
+    lead: "Diseñamos arquitecturas de software exclusivas para tus desafíos y te asesoramos técnicamente antes de cada inversión para asegurar el máximo retorno.",
     items: ["Software a medida", "Integraciones entre sistemas", "Automatización de procesos"],
   },
   {
     id: "odoo",
-    title: "Implementación de Odoo",
-    lead: "Como partner oficial de Odoo, te ayudamos a ponerlo en marcha adaptado a cómo trabaja tu empresa.",
+    title: "Implementación experta de Odoo",
+    lead: "Como Partner Oficial, integramos y adaptamos el sistema ERP líder a la cultura y los procesos reales de tu organización, asegurando una transición fluida y un equipo capacitado.",
     items: [
       "Análisis de tus procesos",
       "Configuración",
@@ -28,8 +28,12 @@ export function Services() {
       <div className={`reveal ${styles.inner}`}>
         <SectionLabel>Qué hacemos</SectionLabel>
         <h2 id="servicios-title" className={styles.title}>
-          Dos líneas de trabajo, el mismo cuidado.
+          Soluciones integrales con un enfoque humano.
         </h2>
+        <p className={styles.intro}>
+          Brindamos capacidades técnicas avanzadas con el compromiso de un equipo local que prioriza
+          tus resultados.
+        </p>
         <div className={styles.columns}>
           {services.map((service) => (
             <article key={service.title} id={service.id} className={styles.card}>
