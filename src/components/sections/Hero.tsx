@@ -15,8 +15,8 @@ export function Hero() {
             Transformamos la gestión de tu empresa con tecnología a tu medida.
           </h1>
           <p className={styles.sub}>
-            Combinamos desarrollo especializado y consultoría estratégica desde {siteConfig.locality}
-            para acompañarte cara a cara. Entendemos tu operación real y caminamos junto a vos en cada
+            Combinamos desarrollo especializado y consultoría estratégica desde{" "}
+            {siteConfig.locality} para acompañarte cara a cara. Entendemos tu operación real y caminamos junto a vos en cada
             etapa de la evolución digital de tu negocio.
           </p>
           <div className={styles.actions}>
